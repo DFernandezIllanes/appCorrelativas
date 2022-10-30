@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class RepoMateriaMemoria implements RepoMateria{
@@ -42,5 +43,11 @@ public class RepoMateriaMemoria implements RepoMateria{
         atributo coincidan con el valor del parametro, traeme el primero
          */
         return this.materias.stream().filter(materia -> materia.getNombre().equals(nombre)).findFirst().get();
+    }
+
+    @Override
+    public List<Materia> porAnio(int anio) {
+
+        return this.materias.stream().filter(materia -> materia.getAnio().equals(anio)).collect(Collectors.toList());
     }
 }

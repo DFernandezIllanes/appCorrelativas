@@ -17,4 +17,6 @@ public interface RepoMateria {
     public Page<Materia> page(Pageable pageable);
 
     public Materia porNombre(String nombre);
+
+    public List<Materia> porAnio(int anio);
 }
