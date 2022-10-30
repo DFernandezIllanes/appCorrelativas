@@ -1,5 +1,6 @@
 package ar.edu.utn.link.correlativas.app;
 
+import ar.edu.utn.link.correlativas.Alumno;
 import ar.edu.utn.link.correlativas.Materia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,7 +19,7 @@ public class AppCorrelativas {
     }
 
     @Bean
-    public CommandLineRunner ejemplo(RepoMateria repo){
+    public CommandLineRunner ejemplo(RepoMateria repo, RepoAlumno repoAlumno){
         return (cosas) -> {
 
             repo.save(new Materia("SO", 2));
@@ -26,6 +27,10 @@ public class AppCorrelativas {
             repo.save(new Materia("Algo", 1));
             repo.save(new Materia("Analisis", 2));
             repo.save(new Materia("Sintaxis", 2));
+
+            repoAlumno.save(new Alumno("pepe"));
+            repoAlumno.save(new Alumno("juan"));
+            repoAlumno.save(new Alumno("jorge"));
         };
     }
 }

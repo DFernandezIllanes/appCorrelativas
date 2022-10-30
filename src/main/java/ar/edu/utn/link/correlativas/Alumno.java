@@ -9,6 +9,8 @@ public class Alumno {
     private List<Curso> cursos;
     private Collection<Materia> materiasAprobadas;
 
+    public Alumno(){}
+
     public Alumno(String nombre) {
         super();
         this.nombre = nombre;

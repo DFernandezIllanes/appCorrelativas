@@ -37,7 +37,7 @@ public class MateriasController {
 
     @PostMapping("/")
     public String alta(@RequestBody @Valid Materia materia,
-                       BindingResult bindingResult){
+                       BindingResult bindingResult) throws MateriaRepetidaException{
 
         if(bindingResult.hasErrors()){
             return "not ok";
